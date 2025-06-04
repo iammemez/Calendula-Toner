@@ -2,62 +2,140 @@
 <html lang="ms">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Toner Glowing - Kulit Segar Berseri</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
       background: #fff0f5;
       color: #333;
+      line-height: 1.6;
     }
-
     header {
       background: #ff69b4;
       color: white;
       padding: 2rem 1rem;
       text-align: center;
     }
-
     header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.8rem;
+    }
+    header p {
+      font-size: 1.3rem;
       margin: 0;
-      font-size: 2.5rem;
     }
-
     section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
+    h2 {
+      color: #d6336c;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
     .hero-img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
+      display: block;
+      margin: 1rem auto 2rem;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(255,105,180,0.3);
     }
-
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #ffe0f0;
+      margin: 0.6rem 0;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #b83270;
+      position: relative;
+      padding-left: 2rem;
+    }
+    ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ff69b4;
+      font-weight: bold;
+    }
     .btn {
       display: inline-block;
       background: #ff69b4;
       color: white;
       padding: 1rem 2rem;
-      border: none;
       border-radius: 50px;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
+      margin-top: 1.5rem;
     }
-
     .btn:hover {
-      background: #e758a2;
+      background: #d6336c;
     }
-
+    .price-box {
+      background: #ffe0f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(255,105,180,0.2);
+    }
+    .price-box h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.5rem;
+      color: #b83270;
+    }
+    .price-box p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 0 1rem 0;
+    }
+    .faq {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #fff0f5;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      margin: 0.8rem 0;
+      border-left: 6px solid #ff69b4;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-item:hover {
+      background: #ffe0f0;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* Enough for text */
+    }
     footer {
       text-align: center;
-      padding: 2rem;
       font-size: 0.9rem;
       color: #777;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
@@ -68,21 +146,79 @@
     <p>Kulit segar, cerah & bebas jerawat 💧</p>
   </header>
 
-  <section>
-    <img src="https://via.placeholder.com/800x400?text=Gambar+Toner" alt="Toner Glowing" class="hero-img" />
-    <h2>Kenapa Pilih Toner Glowing?</h2>
-    <ul>
-      <li>✓ Mencerahkan kulit secara semula jadi</li>
-      <li>✓ Mengecilkan pori & kawal minyak</li>
-      <li>✓ Sesuai untuk semua jenis kulit</li>
-    </ul>
-    <p>Diperkaya dengan ekstrak bunga ros dan niacinamide, toner ini bantu rawat kulit kusam dan jerawat tanpa rasa pedih atau melekit.</p>
+  <section id="intro">
+    <img src="https://via.placeholder.com/900x400?text=Gambar+Toner" alt="Toner Glowing" class="hero-img" />
+    <h2>Selamat Datang ke Toner Glowing</h2>
+    <p>Tonik premium dengan bahan semula jadi yang membantu mencerahkan kulit dan mengawal minyak untuk wajah yang lebih berseri setiap hari.</p>
     <a href="https://wa.me/60123456789" class="btn">Order Sekarang</a>
+  </section>
+
+  <section id="masalah">
+    <h2>Masalah Kulit Anda</h2>
+    <ul>
+      <li>Kulit kusam dan tak bermaya</li>
+      <li>Jerawat dan bintik hitam</li>
+      <li>Pori terbuka dan minyak berlebihan</li>
+      <li>Kesukaran mencari toner yang sesuai</li>
+    </ul>
+  </section>
+
+  <section id="kelebihan">
+    <h2>Kelebihan Toner Glowing</h2>
+    <ul>
+      <li>Mencerahkan kulit secara semula jadi</li>
+      <li>Mengecilkan pori & mengawal minyak</li>
+      <li>Ekstrak bunga ros & niacinamide</li>
+      <li>Formulasi lembut, tidak pedih</li>
+      <li>Sesuai untuk semua jenis kulit</li>
+    </ul>
+  </section>
+
+  <section id="harga">
+    <h2>Harga & Pakej</h2>
+    <div class="price-box">
+      <h3>Pakej Single</h3>
+      <p>RM49.90</p>
+      <a href="https://wa.me/60123456789" class="btn">Order Sekarang</a>
+    </div>
+    <div class="price-box">
+      <h3>Pakej Combo 3 Botol</h3>
+      <p>RM139.90 <del>RM149.70</del></p>
+      <a href="https://wa.me/60123456789" class="btn">Order Sekarang</a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>Soalan Lazim (FAQ)</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-question">Adakah toner ini sesuai untuk kulit sensitif?</p>
+        <p class="faq-answer">Ya, toner ini diformulasi lembut dan sesuai untuk semua jenis kulit termasuk kulit sensitif.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-question">Berapa kerap saya perlu guna toner ini?</p>
+        <p class="faq-answer">Gunakan toner ini dua kali sehari, pagi dan malam selepas mencuci muka.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-question">Adakah produk ini diuji secara dermatologi?</p>
+        <p class="faq-answer">Ya, produk ini telah diuji secara dermatologi untuk keselamatan dan keberkesanan.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
     © 2025 Toner Glowing by Noufa Skin. All rights reserved.
   </footer>
+
+<script>
+  // FAQ toggle
+  const faqs = document.querySelectorAll('.faq-item');
+  faqs.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
